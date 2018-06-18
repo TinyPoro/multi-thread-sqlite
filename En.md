@@ -31,7 +31,7 @@ Now I will try to show small trick to make write operation in almost same time.
 
 Of course it can impact performance if you do write operation on big part of table. But second thread will not wait a lot of time for first operation end. 
 
-[image](https://media.licdn.com/dms/image/C5612AQFU1Qb1s5ET0w/article-inline_image-shrink_1000_1488/0?e=2128896000&v=beta&t=l4oDD044Ifz5bnf_9Z0mLqE8H10w5nIFL0AOojqQAw0)
+[image](0.jpeg)
 
 #### here is main point STEP 1.7.
 
