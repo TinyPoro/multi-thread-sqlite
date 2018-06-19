@@ -44,10 +44,10 @@ delete from table where name='Fariz' // nó sẽ khoá toàn bộ cơ sở dữ 
 
 ##### REPLACE WITH:
 
-Chèn vào bộ nhớ đệm. Khoá rowid được chọn, 'processid' from table where name = 'Fariz'; // nó chỉ tạm thời khoá cơ sở dữ liệu trong 10s.
+insert into tepm.Lock select rowid,'processid' from table where name = 'Fariz'; // Nó chỉ khóa các sơ sở dữ liệu tạm thời liên quan 10s.
 
-delete from table where ROWID in ( select rowid from tepm.Lock where name='fariz' and processid='XYZ' ) // thao tác delete sẽ khoá file DB trong khoảng 0.001s.
+delete from table where ROWID in ( select rowid from tepm.Lock where name='fariz' and processid='XYZ' ) // lệnh xóa sẽ khóa file db trong 0.001 giây.
 
 Tôi đã thực hiện một test nhỏ và kết quả khá tốt. Tôi đã có thể hoàn thành 2 thao tác update tương tự trong 11s mà mỗi thao tác mất khoảng 10s, cho bảng có khoảng 10 triệu row.
 
-Hi vọng là nó sẽ giúp được có các người dùng SQLite.
+ẻkfjsdlkajfHi vọng là nó sẽ giúp được có các người dùng SQLite.

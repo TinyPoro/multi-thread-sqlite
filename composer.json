@@ -1,0 +1,14 @@
+{
+    "name": "idist/multi-thread-sqlite",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "fzaninotto/faker": "^1.7"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "psr-4": {"IDisT\\SQLiteMultiThread\\": "src"}
+    }
+}
