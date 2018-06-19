@@ -5,14 +5,13 @@ Chào các bạn,
 
 Như bạn đã biết thì SQLite là một cơ sở dữ liệu đơn luồng mặc định là được đưa vào hệ điều hành linux. Có rất nhiều các công trình nghiên cứu về việc sử dụng SQLite để lưu trữ dữ liệu. Cũng có rất nhiều công trình nghiên cứu về việc làm cách nào có thể truy cập vào cơ sở dữ liệu SQLite cho các hoạt động ghi một cách đa luồng. Tôi sẽ chia sẻ nghiên cứu nhỏ của tôi về việc làm cách nào đạt được thao tác ghi đa luồng trên cơ sở dũ liệu SQLite.
 
-Let's to know about SQLite advantages and disadvantages.
 Chúng ta cần biết về các ưu điểm và nhược điểm của SQLite
 
 #### Ưu điểm.
- * SQLite is written pure C programming language. So it is fastest access to DISK or Memory database and process data. Think about if you use SSD disk. 
- * SQLite support in-memory. In memory SQLite almost 2 time fast. If you understand paging issue. It is enough fast.
-* SQLite is single thread. So it lowest risk to corrupt data. 
-* SQLite database in single file. So we can move database and access by another platform very easyly. 
+ * SQLite được viết bằng ngôn ngữ lập trình C thuần. vì vậy nó truy cập ổ đĩa hoặc cơ sở dữ liệu trong bộ nhớ hoặc các tiến trình dữ liệu là nhanh nhất. Hãy thử nghĩ khi bạn sử dụng ổ đĩa SSD.
+ * SQLite hỗ trợ cả trên bộ nhớ ( hỗ trợ trên Ram ). Trên memory, SQLite có thể nhanh hơn gần gấp đôi. Nếu bạn có thể hiểu vấn đề về phân trang. Nó cũng đủ nhanh rồi.
+* SQLite chỉ có luồng đơn. Vì vậy nguy cơ dữ liệu bị hỏng là thấp nhất.
+* Cơ sở dữ liệu của SQLite chỉ nằm trong 1 file duy nhất. Vì vậy có thể di chuyển cơ sở dữ liệu và truy cập bởi bất cứ nền tảng nào một cách rất dễ dàng. 
 * SQLite is 0 administration for end user. 
 * Cross platform. SQLite can be used on all major OS platform. 
 * OPENSOURCE OPENSOURCE OPENSOURCE !!!
@@ -31,7 +30,7 @@ Now I will try to show small trick to make write operation in almost same time.
 
 Of course it can impact performance if you do write operation on big part of table. But second thread will not wait a lot of time for first operation end. 
 
-[image](0.jpeg)
+![image](0.jpeg)
 
 #### here is main point STEP 1.7.
 
